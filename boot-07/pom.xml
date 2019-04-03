@@ -2,17 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <parent>
-        <groupId>cn.hacz.edu</groupId>
-        <artifactId>open-guod-boot</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-
-    <artifactId>boot-07</artifactId>
-    <packaging>pom</packaging>
-
     <modules>
         <!-- Hibernate Validator数据校验更安全 -->
         <module>boot-07-01</module>
@@ -22,5 +11,21 @@
         <module>boot-07-03</module>
         <!-- AES加密工具类 -->
         <module>boot-07-04</module>
+        <!-- common-codec和BouncyCastle对称加密 -->
+        <module>boot-07-05</module>
+        <!-- 非对称加密 -->
+        <module>boot-07-06</module>
     </modules>
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.hacz.edu</groupId>
+        <artifactId>open-guod-boot</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <artifactId>boot-07</artifactId>
+
+    <packaging>pom</packaging>
+
 </project>
