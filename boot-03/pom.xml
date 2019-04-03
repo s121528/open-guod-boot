@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.hacz.edu</groupId>
+        <artifactId>open-guod-boot</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>boot-03</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- logback日志，spring boot默认日志框架 -->
+        <module>boot-03-01</module>
+        <!-- log4g -->
+        <module>boot-03-02</module>
+    </modules>
+
+    
+</project>

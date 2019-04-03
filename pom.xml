@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.hacz.edu</groupId>
+    <artifactId>open-guod-boot</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>open-guod-boot</name>
+    <description>Spring Boot-基础+提升</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.0.6.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <!-- 项目模块 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <spring-boot.version>2.1.0.RELEASE</spring-boot.version>
+    </properties>
+
+    <modules>
+        <module>common-01</module>
+        <!-- 点睛spring -->
+        <module>base-01</module>
+        <!-- 点睛spring MVC -->
+        <module>base-02</module>
+        <!-- 实战spring boot入门基础 -->
+        <module>boot-01</module>
+        <!-- 实战spring boot的WEB应用视图开发 -->
+        <module>boot-02</module>
+        <!-- 实战spring boot中log日志配置 -->
+        <module>boot-03</module>
+        <!-- 实战spring boot中WEB应用开发中常用基础操作-->
+        <module>boot-04</module>
+        <!-- 实战spring boot中简洁的JSON和XML数据交互+Excel导入导出-->
+        <module>boot-05</module>
+        <!-- 实战spring boot中Rest full接口-->
+        <module>boot-06</module>
+        <!-- 实战spring boot中让传输数据更安全 -->
+        <module>boot-07</module>
+        <!-- 实战spring boot中SQL关系型数据库 -->
+        <module>boot-08</module>
+        <!-- 实战spring boot中NoSQL非关系型数据库-->
+        <module>boot-09</module>
+        <!-- 实战spring boot中定时任务 -->
+        <module>boot-10</module>
+        <!-- 实战spring boot中异步处理 -->
+        <module>boot-11</module>
+        <!-- RBAC权限管理 -->
+        <module>boot-14</module>
+        <!-- 工作流 -->
+        <module>boot-15</module>
+        <!-- 实战框架整合 -->
+        <module>boot-16</module>
+        <!-- 自定义starter -->
+        <module>boot-17</module>
+        <!-- 中间件 -->
+        <module>boot-18</module>
+        <!-- Docker容器 -->
+        <module>boot-19</module>
+        <module>project</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- 代码简化工具 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.14</version>
+        </dependency>
+        <!-- 加密工具 -->
+        <dependency>
+            <groupId>com.github.ulisesbocchio</groupId>
+            <artifactId>jasypt-spring-boot-starter</artifactId>
+            <version>1.16</version>
+        </dependency>
+        <!-- 属性配置文件 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+        </dependency>
+        <!-- 文件操作 -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>4.1.21</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Package as an executable jar -->
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- spring boot的maven插件 -->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+                <!-- 编译级别 -->
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <target>${java.version}</target>
+                        <source>${java.version}</source>
+                        <encoding>UTF-8</encoding>
+                    </configuration>
+                </plugin>
+                <!-- install的时候跳过单元测试 -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <configuration>
+                        <skip>true</skip>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>

@@ -1,0 +1,33 @@
+secretkey: 1234456
+server:
+  port: 11601
+  tomcat:
+    uri-encoding: UTF-8
+jasypt:
+  encryptor:
+    password: foo
+spring:
+  datasource:
+    username: root
+    password: passw0rd
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.9.4.107:3306/test?useOldAliasMetadataBehavior=true&useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+  servlet:
+    multipart:
+      max-request-size: 50Mb
+      max-file-size: 50Mb
+  resources:
+    static-locations: file:${image.imgPath}
+  mvc:
+    static-path-pattern: /**
+image:
+  imgUrl: http://192.168.100.12:8000/
+  imgPath: /home/kaifa/resource/
+  # imgPath: D:/data/

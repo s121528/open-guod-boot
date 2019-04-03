@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>cn.hacz.edu</groupId>
+        <artifactId>open-guod-boot</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>boot-04</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!-- 使用Filter、Interceptor、aop拦截restful API -->
+        <module>boot-04-01</module>
+        <!-- AOP统一异常、日志、加密解密处理 -->
+        <module>boot-04-02</module>
+        <!-- CORS跨域请求处理 -->
+        <module>boot-04-03</module>
+        <!-- 文件上传下载（zip） -->
+        <module>boot-04-04</module>
+        <!-- SpringMvc静态文件地址 -->
+        <module>boot-04-05</module>
+        <!-- Druid数据源实现项目的监控PK连接池HikariCP -->
+        <module>boot-04-06</module>
+        <!-- Swagger插件优雅的生成API文档 -->
+        <module>boot-04-07</module>
+        <!-- Spring boot域对象：VO、DTO、DO、PO -->
+        <module>boot-04-08</module>
+        <!-- Java8中的时间日期操作 -->
+        <module>boot-04-09</module>
+        <!-- Email邮件发送：QQ、163 -->
+        <module>boot-04-10</module>
+        <!-- 异步处理使用多线程提高rest服务的性能 -->
+        <module>boot-04-12</module>
+        <!-- 优雅的单元测试和wireMock伪造rest服务 -->
+        <module>boot-04-13</module>
+        <!-- 干货：排名前16的Java工具类 -->
+        <module>boot-04-14</module>
+        <!-- 短信发送 -->
+        <module>boot-04-15</module>
+        <!-- JPush 是日常开发中比较常用的推送方式。实现简单，功能全面 -->
+        <module>boot-04-16</module>
+        <!-- FTP文件服务器 -->
+        <module>boot-04-17</module>
+        <!-- 审批流程处理 -->
+        <module>boot-04-18</module>
+        <!-- 串口通信 -->
+        <module>boot-04-19</module>
+        <!-- SpringMVC+ZTree实现树形菜单权限配 -->
+        <module>boot-04-20</module>
+        <module>boot-04-21</module>
+        <!-- 二维码生成 -->
+        <module>boot-04-22</module>
+        <module>boot-04-23</module>
+    </modules>
+</project>

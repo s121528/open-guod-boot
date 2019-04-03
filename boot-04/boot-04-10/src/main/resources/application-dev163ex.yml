@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: mail-demo
+  mail:
+    host: smtphm.qiye.163.com
+    username: admin@cywetc.cn
+    password: Test2019
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
