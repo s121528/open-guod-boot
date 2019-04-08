@@ -38,7 +38,7 @@ public class ArticleController {
         for (int i = 0; i < 10; i++) {
             Article article = new Article();
             article.setTitle("MongoTemplate的基本使用");
-            article.setAuthor("yinjihuan");
+            article.setAuthor("DongDong");
             article.setUrl("http://cxytiandi.com/blog/detail/" + i);
             article.setTags(Arrays.asList("java", "mongodb", "spring"));
             article.setVisitCount(0L);
@@ -52,13 +52,13 @@ public class ArticleController {
      */
     @GetMapping(value = "/addArticleList")
     public void addArticleList() {
-        //批量添加
+        // 批量添加
         List<Article> articles = new ArrayList<>(10);
         for (int i = 0; i < 10; i++) {
             Article article = new Article();
             article.setTitle("MongoTemplate的基本使用");
-            article.setAuthor("yinjihuan");
-            article.setUrl("http://cxytiandi.com/blog/detail/" + i);
+            article.setAuthor("guoDong");
+            article.setUrl("http://cxytiandi.com/blog/" + i);
             article.setTags(Arrays.asList("java", "mongodb", "spring"));
             article.setVisitCount(0L);
             article.setAddTime(new Date());
@@ -184,6 +184,15 @@ public class ArticleController {
     }
 
     /**
+     * 只查询符合多条件的第一条数据，返回Article对象
+     */
+    @GetMapping(value = "/select02Atricle")
+    public void select0201Atricle() {
+        Query query = Query.query(Criteria.where("author").is("yinjihuan").and("title").is("Title"));
+        Article article = mongoTemplate.findOne(query, Article.class);
+    }
+
+    /**
      * 查询集合中所有数据，不加条件
      */
     @GetMapping(value = "/select03Atricle")
@@ -246,7 +255,7 @@ public class ArticleController {
     }
 
     /**
-     * 模糊查询，author中包含a的数据
+     * like模糊查询，author中包含a的数据
      */
     @GetMapping(value = "/select10Atricle")
     public void select10Atricle() {
