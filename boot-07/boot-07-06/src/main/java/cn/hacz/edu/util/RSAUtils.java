@@ -1,6 +1,7 @@
 package cn.hacz.edu.util;
 
-import org.apache.commons.codec.binary.Base64;
+
+import org.apache.tomcat.util.codec.binary.Base64;
 
 import javax.crypto.Cipher;
 import java.security.*;
@@ -10,13 +11,13 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * project -
  *
- * @author yanfa07
+ * @author guodd
  * @version 1.0
  * @date 日期:2019/4/3 时间:20:46
  * @JDK 1.8
- * @Description 功能模块：
+ * @Description 功能模块：RSA
  */
-public class RSACryptography {
+public class RSAUtils {
     public static String data = "hello world";
 
     public static void main(String[] args) throws Exception {
@@ -74,8 +75,7 @@ public class RSACryptography {
         byte[] keyBytes = Base64.decodeBase64(key);
         X509EncodedKeySpec keySpec = new X509EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-        PublicKey publicKey = keyFactory.generatePublic(keySpec);
-        return publicKey;
+        return keyFactory.generatePublic(keySpec);
     }
 
     /**
@@ -86,11 +86,9 @@ public class RSACryptography {
      * @throws Exception
      */
     public static PrivateKey getPrivateKey(String key) throws Exception {
-
         byte[] keyBytes = Base64.decodeBase64(key);
         PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(keyBytes);
         KeyFactory keyFactory = KeyFactory.getInstance("RSA");
-        PrivateKey privateKey = keyFactory.generatePrivate(keySpec);
-        return privateKey;
+        return keyFactory.generatePrivate(keySpec);
     }
 }

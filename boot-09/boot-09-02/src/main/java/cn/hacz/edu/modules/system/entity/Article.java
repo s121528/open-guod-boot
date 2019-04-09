@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -36,6 +36,9 @@ public class Article {
     private List<String> tags;
     @Field("visit_count")
     private Long visitCount;
-    @Field("add_time")
-    private Date addTime;
+    private LocalDateTime addTime;
+    /**
+     * 功能描述：价格
+     */
+    private Integer price;
 }

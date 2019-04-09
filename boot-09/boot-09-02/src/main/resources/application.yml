@@ -8,9 +8,9 @@ jasypt:
 spring:
   datasource:
     username: root
-    password: 123654
+    password: passw0rd
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql:///boot
+    url: jdbc:mysql:///test
   jpa:
     show-sql: true
     generate-ddl: true
@@ -21,6 +21,6 @@ spring:
       ddl-auto: create
   data:  # MongoDB数据库配置
     mongodb:
-      host: 'ENC(y3jjpYbJcYNd0nq2OT7jT87m7A7H+cAt)'
+      host: 10.248.2.12
       port: 27017
-      database: guod
+      database: demo

@@ -1,5 +1,6 @@
 package cn.hacz.edu.modules.system;
 
+import cn.hacz.edu.modules.system.dao.UserDaoI;
 import cn.hacz.edu.modules.system.entity.Article;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +11,9 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -29,6 +30,9 @@ public class ArticleController {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+    @Autowired
+    private UserDaoI userDaoI;
+
     /**
      * 功能描述：循环添加数据
      */
@@ -42,7 +46,8 @@ public class ArticleController {
             article.setUrl("http://cxytiandi.com/blog/detail/" + i);
             article.setTags(Arrays.asList("java", "mongodb", "spring"));
             article.setVisitCount(0L);
-            article.setAddTime(new Date());
+            article.setAddTime(LocalDateTime.now());
+            article.setPrice(i + 1);
             mongoTemplate.save(article);
         }
     }
@@ -61,7 +66,7 @@ public class ArticleController {
             article.setUrl("http://cxytiandi.com/blog/" + i);
             article.setTags(Arrays.asList("java", "mongodb", "spring"));
             article.setVisitCount(0L);
-            article.setAddTime(new Date());
+            article.setAddTime(LocalDateTime.now());
             articles.add(article);
         }
         mongoTemplate.insert(articles, Article.class);
@@ -186,7 +191,7 @@ public class ArticleController {
     /**
      * 只查询符合多条件的第一条数据，返回Article对象
      */
-    @GetMapping(value = "/select02Atricle")
+    @GetMapping(value = "/select0201Atricle")
     public void select0201Atricle() {
         Query query = Query.query(Criteria.where("author").is("yinjihuan").and("title").is("Title"));
         Article article = mongoTemplate.findOne(query, Article.class);
