@@ -21,7 +21,7 @@
         <module>boot-08-03</module>
         <!-- SQL关系型数据库-Hibernate+关系映射 -->
         <module>boot-08-04</module>
-        <!-- JPA转Hibernate使用-->
+        <!-- JPA转Hibernate使用 -->
         <module>boot-08-05</module>
         <!-- JPA扩展应用开发 -->
         <module>boot-08-06</module>

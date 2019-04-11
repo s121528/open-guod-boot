@@ -1,3 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  resources:
+    static-locations: classpath:/static/,classpath:/views/,file:H:/,file:/opt/www
+
 server:
   port: 10417
 

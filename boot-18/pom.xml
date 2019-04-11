@@ -20,5 +20,9 @@
         <module>boot-18-02</module>
         <!-- elk -->
         <module>boot-18-03</module>
+        <!-- 携程Apollo配置中心 -->
+        <module>boot-18-04</module>
+        <!-- 阿里开源的缓存框架JetCache -->
+        <module>boot-18-05</module>
     </modules>
 </project>

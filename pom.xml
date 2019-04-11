@@ -66,6 +66,8 @@
         <module>boot-18</module>
         <!-- Docker容器 -->
         <module>boot-19</module>
+        <!-- 支付宝/微信支付 -->
+        <module>boot-20</module>
         <module>project</module>
     </modules>
 
