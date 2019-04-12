@@ -14,15 +14,15 @@
     <packaging>pom</packaging>
     <modules>
         <!-- 参考资料：https://github.com/gf-huanchupk/SpringBootLearning -->
-        <!-- kafka消息中间件 -->
+        <!-- 消息中间件（Kafka、RocketMQ、RabbitMQ、ActiveMQ） -->
         <module>boot-18-01</module>
-        <!-- elasticsearch -->
+        <!-- elk、elasticsearch -->
         <module>boot-18-02</module>
         <!-- elk -->
         <module>boot-18-03</module>
         <!-- 携程Apollo配置中心 -->
         <module>boot-18-04</module>
-        <!-- 阿里开源的缓存框架JetCache -->
+        <!-- 阿里开源的缓存框架JetCache和springCache -->
         <module>boot-18-05</module>
     </modules>
 </project>

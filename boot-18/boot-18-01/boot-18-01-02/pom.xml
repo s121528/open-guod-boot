@@ -2,19 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
     <parent>
+        <artifactId>boot-18-01</artifactId>
         <groupId>cn.hacz.edu</groupId>
-        <artifactId>boot-18</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>boot-18-01</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <!-- Kafka -->
-        <module>boot-18-01-01</module>
-        <!-- RocketMQ -->
-        <module>boot-18-01-02</module>
-    </modules>
+    <artifactId>boot-18-01-02</artifactId>
+
 </project>
