@@ -23,13 +23,10 @@ import javax.persistence.MappedSuperclass;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
-public class Base03Entiy {
-    /**
-     * 32位UUID
-     */
+@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
+public class Base04Entity {
     @Id
-    @GeneratedValue(generator = "paymentableGenerator")
-    @GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
-    @Column(name = "id", nullable = false, length = 32)
-    private String id;
+    @GeneratedValue(generator = "jpa-uuid")
+    @Column(length = 32)
+    private String userId;
 }

@@ -3,12 +3,8 @@ package cn.hacz.edu.modules.system.entity.base;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
 /**
  * project - GitHub整理 综合客户服务系统
@@ -23,10 +19,8 @@ import javax.persistence.MappedSuperclass;
 @AllArgsConstructor
 @NoArgsConstructor
 @MappedSuperclass
-@GenericGenerator(name = "jpa-uuid", strategy = "uuid")
-public class Base04Entiy {
+public class BaseEntity {
     @Id
-    @GeneratedValue(generator = "jpa-uuid")
-    @Column(length = 32)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String userId;
 }
