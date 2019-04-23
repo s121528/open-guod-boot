@@ -44,7 +44,6 @@
             <artifactId>jodd</artifactId>
             <version>3.3.7</version>
         </dependency>
-        <!-- 瑞士军刀 -->
         <dependency>
             <groupId>org.jodd</groupId>
             <artifactId>jodd-core</artifactId>

@@ -1,6 +1,7 @@
 package cn.hacz.edu.modules.system;
 
 import cn.hacz.edu.modules.system.vo.PersonVo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,12 +19,13 @@ import java.time.LocalDateTime;
  * @Description 功能模块：
  */
 @RestController
+@Slf4j
 public class PersonController {
     @GetMapping(value = "/getPerson/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public PersonVo getPerson(@PathVariable String id) {
         PersonVo personVo = new PersonVo();
         personVo.setId(id);
-        personVo.setName("guod");
+        personVo.setName("guo");
         personVo.setAge(22);
         personVo.setBirthday(LocalDateTime.now());
         return personVo;

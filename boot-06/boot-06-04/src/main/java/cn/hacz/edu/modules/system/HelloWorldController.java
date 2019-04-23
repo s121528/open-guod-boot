@@ -1,6 +1,7 @@
 package cn.hacz.edu.modules.system;
 
 import cn.hacz.edu.modules.system.vo.UserVo;
+import cn.hutool.json.JSONUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Enumeration;
@@ -31,8 +35,26 @@ import java.util.Enumeration;
 @RestController
 @Slf4j
 public class HelloWorldController {
+
     /**
-     * 功能描述：
+     * 功能描述：响应response
+     */
+    @RequestMapping(value = "/test")
+    public void test(HttpServletRequest request, HttpServletResponse response) {
+        log.info(JSONUtil.toJsonStr(request));
+        response.setContentType("text/html;charset=UTF-8");
+        String data = "中国";
+        OutputStream out;
+        try {
+            out = response.getOutputStream();
+            out.write(data.getBytes());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 功能描述：获取请求头信息
      *
      * @param request
      * @return

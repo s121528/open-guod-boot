@@ -31,6 +31,8 @@
         <module>boot-01-07</module>
         <!-- Spring boot工具类Java8中的LocalDateTime -->
         <module>boot-01-08</module>
+        <!-- spring boot项目启动时如何初始化你想要的资源 -->
+        <module>boot-01-09</module>
     </modules>
 
 

@@ -9,11 +9,11 @@
         <module>boot-07-02</module>
         <!-- jasypt 配置文件安全策略 -->
         <module>boot-07-03</module>
-        <!-- AES加密工具类 -->
+        <!-- 单向散列函数的加密，属于编码格式：BASE64、MD5、SHA、HMAC -->
         <module>boot-07-04</module>
-        <!-- common-codec和BouncyCastle对称加密 -->
+        <!-- 对称加密算法 ：DES、3DES、PBE、RC2、RC4、AES，common-codec和BouncyCastle对称加密 -->
         <module>boot-07-05</module>
-        <!-- 非对称加密 -->
+        <!-- 非对称加密算法：RSA、DSA、ECC -->
         <module>boot-07-06</module>
     </modules>
 
