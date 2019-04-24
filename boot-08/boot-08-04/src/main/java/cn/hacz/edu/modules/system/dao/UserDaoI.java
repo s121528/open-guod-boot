@@ -27,6 +27,6 @@ public interface UserDaoI extends JpaRepository<UserEntity, Serializable> {
     @Query(value = "from UserEntity")
     List<UserEntity> getUserAllByJpl();
 
-    @Query("select e from UserEntity e ORDER BY e.time ASC")
+    @Query("select e from UserEntity e ORDER BY e.name ASC")
     Page<UserEntity> findInOrders(Pageable pageable);
 }

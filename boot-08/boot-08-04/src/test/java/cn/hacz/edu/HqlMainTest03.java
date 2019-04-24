@@ -68,4 +68,11 @@ public class HqlMainTest03 {
         hibernateHQL03.leftJoin();
     }
 
+
+    @Test
+    public void testInit(){
+        hibernateHQL03.getOrder();
+    }
+
+
 }

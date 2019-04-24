@@ -4,9 +4,15 @@ import cn.hacz.edu.mapping.admin.SysDep;
 import cn.hacz.edu.mapping.admin.SysMenu;
 import cn.hacz.edu.mapping.admin.SysRole;
 import cn.hacz.edu.mapping.admin.SysUser;
+import cn.hacz.edu.mapping.order.AddressEntity;
+import cn.hacz.edu.mapping.order.OrderEntity;
+import cn.hacz.edu.mapping.order.UserEntity;
 import org.hibernate.Session;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -141,5 +147,38 @@ public class HibernateHQL03 {
                 " left join fetch users.roles roles " +
                 " left join fetch roles.menus menus ", SysDep.class).list();
         System.out.println(list);
+    }
+
+
+    /**
+     * 功能描述：
+     */
+    public void test() {
+        OrderEntity orderEntity = new OrderEntity();
+        orderEntity.setName("test01");
+        AddressEntity addressEntity01 = new AddressEntity();
+        addressEntity01.setName("add01");
+        AddressEntity addressEntity02 = new AddressEntity();
+        addressEntity02.setName("add02");
+        UserEntity userEntity01 = new UserEntity();
+        userEntity01.setName("user01");
+        UserEntity userEntity02 = new UserEntity();
+        userEntity02.setName("user02");
+        orderEntity.setAddressEntity(addressEntity01);
+        orderEntity.setAddressEntity(addressEntity02);
+        orderEntity.setUserEntity(userEntity01);
+        orderEntity.setUserEntity(userEntity02);
+        this.getSessionUnwrap().save(orderEntity);
+    }
+
+    public void getOrder() {
+        List<OrderEntity> list = this.getSessionUnwrap().createQuery(" from OrderEntity o " +
+                " left join fetch o.userEntity u " +
+                " left join fetch o.addressEntity a ", OrderEntity.class).list();
+        for (OrderEntity orderEntity : list) {
+            if (!StringUtils.isEmpty(orderEntity.getUserEntity())) {
+                System.out.println(orderEntity.getUserEntity().getName());
+            }
+        }
     }
 }
