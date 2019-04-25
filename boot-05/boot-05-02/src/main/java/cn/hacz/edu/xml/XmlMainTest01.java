@@ -22,6 +22,7 @@ import java.util.List;
  */
 public class XmlMainTest01 {
     public static void main(String[] args) throws Exception {
+        // 数据拼接
         RootVo rootVo = new RootVo();
         HeadVo headVo = new HeadVo();
         BodyVo bodyVo = new BodyVo();
@@ -34,6 +35,7 @@ public class XmlMainTest01 {
         divVos.add(divVo02);
         bodyVo.setDivVoList(divVos);
         bodyVo.setSize(bodyVo.getDivVoList().size());
+        // xml对象
         XmlMapper xmlMapper = new XmlMapper();
         xmlMapper.enable(SerializationFeature.INDENT_OUTPUT);
         xmlMapper.configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
@@ -42,6 +44,6 @@ public class XmlMainTest01 {
         System.out.println(s);
         // 反序列化成pojo对象
         RootVo rootVoObject = xmlMapper.readValue(s, RootVo.class);
-        System.out.println(rootVoObject.getHeadVo().getScript());
+        System.out.println("取值：" + rootVoObject.getHeadVo().getScript());
     }
 }

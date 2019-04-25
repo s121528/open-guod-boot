@@ -2,6 +2,9 @@ package cn.hacz.edu.jackson;
 
 import cn.hacz.edu.modules.system.entity.UserEntity;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.Test;
 
 /**
@@ -25,5 +28,17 @@ public class JackSonMain01 {
         // 反序列化（两种方式）
         UserEntity userEntity = objectMapper.readValue(s, UserEntity.class);
         System.out.println(userEntity.getName());
+        // 自定义JSON节点
+        ObjectNode objectNode01 = objectMapper.createObjectNode();
+        objectNode01.put("aa", "1");
+        ObjectNode objectNode02 = JsonNodeFactory.instance.objectNode();
+        objectNode02.put("aa", "1");
+        ArrayNode arrayNode01 = objectMapper.createArrayNode();
+        ArrayNode arrayNode02 = JsonNodeFactory.instance.arrayNode();
+        System.out.println(objectMapper.writeValueAsString(objectNode01));
+        arrayNode01.add(objectNode01);
+        arrayNode01.add(objectNode02);
+        arrayNode02.add(objectNode01);
+        System.out.println(objectMapper.writeValueAsString(arrayNode01));
     }
 }
