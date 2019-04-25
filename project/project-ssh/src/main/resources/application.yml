@@ -1,4 +1,15 @@
+server:
+  port: 9696
+  servlet:
+    context-path: /ssh
+  tomcat:
+    uri-encoding: UTF-8
+    max-threads: 1000
+    min-spare-threads: 30
+
 spring:
+  application:
+    name: project-ssh
   profiles:
     active: dev
   jpa:
@@ -17,15 +28,11 @@ spring:
       max-file-size: 100MB
       max-request-size: 100MB
       enabled: true
-
-server:
-  port: 9696
-  servlet:
-    context-path: /ssh
-  tomcat:
-    uri-encoding: utf-8
-    max-threads: 1000
-    min-spare-threads: 30
+  http:
+    encoding:
+      force: true
+      charset: UTF-8
+      enabled: true
 
 jasypt:
   encryptor:
@@ -34,7 +41,7 @@ jasypt:
 logging:
   config: classpath:logback-spring.xml
   level:
-    com.yuqiyu.chapter12.controller: 'off'
+    cn.hacz.edu.modules.system.controller: 'off'
 
 props:
   simple-prop: props
@@ -43,7 +50,6 @@ token:
   header: token           # token 请求头的名字
   secret: secret         # token 加密密钥
   expiration: 604800    # token 过期时间，以秒为单位，604800 是 一星期
-
 
 secret:
   key: test

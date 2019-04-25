@@ -33,6 +33,8 @@
         <module>boot-01-08</module>
         <!-- spring boot项目启动时如何初始化你想要的资源 -->
         <module>boot-01-09</module>
+        <!-- Spring Boot乱码问题 -->
+        <module>boot-01-10</module>
     </modules>
 
 
