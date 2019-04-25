@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hacz.edu.dao.UserMapper">
+    <!--auto generated Code-->
+    <resultMap id="BaseResultMap" type="cn.hacz.edu.entity.UserEntity">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="class_num" property="classNum" jdbcType="INTEGER"/>
+        <result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <resultMap id="UserResultMap" type="cn.hacz.edu.vo.UserResVo">
+        <result column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--auto generated Code-->
+    <sql id="Base_Column_List">
+        id,
+        name,
+        age,
+        class_num,
+        birthday
+    </sql>
+
+    <!--auto generated Code-->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="userEntity.id">
+        INSERT INTO user_entity (
+            id,
+            name,
+            age,
+            class_num,
+            birthday
+        ) VALUES (
+            #{userEntity.id,jdbcType=INTEGER},
+            #{userEntity.name,jdbcType=VARCHAR},
+            #{userEntity.age,jdbcType=INTEGER},
+            #{userEntity.classNum,jdbcType=INTEGER},
+            #{userEntity.birthday,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userEntity.id">
+        INSERT INTO user_entity
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userEntity.id!=null">id,</if>
+            <if test="userEntity.name!=null">name,</if>
+            <if test="userEntity.age!=null">age,</if>
+            <if test="userEntity.classNum!=null">class_num,</if>
+            <if test="userEntity.birthday!=null">birthday,</if>
+        </trim>
+        VALUES
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userEntity.id!=null">#{userEntity.id,jdbcType=INTEGER},
+            </if>
+            <if test="userEntity.name!=null">#{userEntity.name,jdbcType=VARCHAR},
+            </if>
+            <if test="userEntity.age!=null">#{userEntity.age,jdbcType=INTEGER},
+            </if>
+            <if test="userEntity.classNum!=null">#{userEntity.classNum,jdbcType=INTEGER},
+            </if>
+            <if test="userEntity.birthday!=null">#{userEntity.birthday,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <!--auto generated Code-->
+    <insert id="insertList">
+        INSERT INTO user_entity (
+        id,
+        name,
+        age,
+        class_num,
+        birthday
+        )VALUES
+        <foreach collection="userEntitys" item="userEntity" index="index" separator=",">
+            (
+            #{userEntity.id,jdbcType=INTEGER},
+            #{userEntity.name,jdbcType=VARCHAR},
+            #{userEntity.age,jdbcType=INTEGER},
+            #{userEntity.classNum,jdbcType=INTEGER},
+            #{userEntity.birthday,jdbcType=TIMESTAMP}
+            )
+        </foreach>
+    </insert>
+
+    <!--auto generated Code-->
+    <update id="updateByPrimaryKeySelective">
+        UPDATE user_entity
+        <set>
+            <if test="userEntity.name != null">name= #{userEntity.name,jdbcType=VARCHAR},</if>
+            <if test="userEntity.age != null">age= #{userEntity.age,jdbcType=INTEGER},</if>
+            <if test="userEntity.classNum != null">class_num= #{userEntity.classNum,jdbcType=INTEGER},</if>
+            <if test="userEntity.birthday != null">birthday= #{userEntity.birthday,jdbcType=TIMESTAMP}</if>
+        </set>
+        WHERE id = #{userEntity.id,jdbcType=INTEGER}
+    </update>
+
+    <select id="selectUser" resultMap="UserResultMap">
+        select * from user_entity
+        where name = #{0} and age = #{1}
+    </select>
+
+    <select id="selectUserParam" resultMap="UserResultMap">
+        select * from user_entity
+        where name = #{name} and age = #{age}
+    </select>
+
+    <select id="selectUserMap" parameterType="java.util.Map" resultMap="UserResultMap">
+        select * from user_entity
+        where name = #{name} and age = #{age}
+    </select>
+
+    <!-- resultMap可以实现延迟加载，resultType无法实现延迟加载 -->
+    <select id="selectUserObj" parameterType="UserReqVo" resultMap="UserResultMap">
+        select
+        age
+        from user_entity
+        where name = #{name} and age = #{age}
+    </select>
+
+</mapper>

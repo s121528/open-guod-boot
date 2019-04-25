@@ -1,16 +1,18 @@
-package cn.hacz.edu.modules.system.entity;
+package cn.hacz.edu.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 /**
- * project - GitHub整理
+ * project -
  *
- * @author Administrator
+ * @author yanfa07
  * @version 1.0
- * @date 日期:2019/1/27 时间:10:06
+ * @date 日期:2019/4/25 时间:13:18
  * @JDK 1.8
  * @Description 功能模块：
  */
@@ -18,7 +20,7 @@ import lombok.Setter;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentEntity {
+public class UserResVo {
     /**
      * 功能描述：主键id
      */
@@ -35,4 +37,8 @@ public class StudentEntity {
      * 功能描述：班级号
      */
     private Integer classNum;
+    /**
+     * 出生日期
+     */
+    private LocalDateTime birthday;
 }
