@@ -140,6 +140,9 @@ public class HibernateHQL01 {
         });
     }
 
+    /**
+     * new的方式
+     */
     public void testHQL_12() {
         List list = this.getSessionUnwrap().createQuery("select new cn.hacz.edu.mapping.admin.hql01.MsgInfo(" +
                 "m.id," +

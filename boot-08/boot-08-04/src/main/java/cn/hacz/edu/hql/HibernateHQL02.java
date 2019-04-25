@@ -65,4 +65,17 @@ public class HibernateHQL02 {
             System.out.println(arr[0] + " | " + arr[1] + " | " + arr[2] + " | " + arr[3]);
         }
     }
+
+    /**
+     * in查询，特别注意：in里面是数组对象，防止直接使用字符串
+     */
+    public void testHQL_24() {
+        Query<GroupEntity> query = this.getSession().createQuery(" from G GroupEntity WHERE G.ID IN (:ids) ", GroupEntity.class);
+        Integer[] ids = new Integer[]{};
+        query.setParameter("ids", ids);
+        // query.setParameter("ids", "1, 2, 3, 4");错误的写法
+        List<GroupEntity> list = query.list();
+        for (int i = 0; i < list.size(); i++) {
+        }
+    }
 }
