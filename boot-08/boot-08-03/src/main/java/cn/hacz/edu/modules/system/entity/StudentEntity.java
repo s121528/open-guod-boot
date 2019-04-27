@@ -1,6 +1,6 @@
 package cn.hacz.edu.modules.system.entity;
 
-import cn.hacz.edu.modules.system.entity.base.Base01Entity;
+import cn.hacz.edu.modules.system.entity.base.BaseEntity;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -9,7 +9,7 @@ import javax.persistence.Table;
 /**
  * project -
  *
- * @author yanfa07
+ * @author guodd
  * @version 1.0
  * @date 日期:2019/4/11 时间:15:32
  * @JDK 1.8
@@ -18,7 +18,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "tb_student_jpa")
-public class StudentEntity extends Base01Entity {
+public class StudentEntity extends BaseEntity {
     /**
      * 属性描述：
      */

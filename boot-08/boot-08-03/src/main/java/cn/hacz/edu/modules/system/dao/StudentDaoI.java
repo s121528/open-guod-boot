@@ -16,7 +16,7 @@ import java.util.List;
 /**
  * project -
  *
- * @author yanfa07
+ * @author guodd
  * @version 1.0
  * @date 日期:2019/4/11 时间:15:35
  * @JDK 1.8
@@ -93,27 +93,38 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
     List<StudentEntity> findByAgeIn(List<Integer> age);
 
     /*===========================动态查询==============================*/
+    // 01对象作为参数传输
     @Modifying
     @Transactional
     @Query(" update StudentEntity s set s.age =:#{#studentVo.age} where s.age =:#{#age} ")
     int updateFlowStatus(@Param("studentVo") StudentVo studentVo, @Param("age") int age);
 
-
     @Query(value = " from StudentEntity s where s.firstName=:#{#studentVo.firstName} and s.age=:#{#studentVo.age} ")
-    List<StudentEntity> findParamsVo(@Param("studentAddReq") StudentVo studentVo);
+    List<StudentEntity> findParamsVo(@Param("studentVo") StudentVo studentVo);
 
-
+    // 02字符串作为参数
     @Modifying
     @Transactional
-    @Query("update StudentEntity s set s.firstName =:firstName where s.lastName =:lastName")
-    int updateTransId(@Param("firstName") String transId, @Param("lastName") String taskId);
+    @Query(" update StudentEntity s set s.firstName =:firstName where s.lastName =:lastName ")
+    int updateTransId(@Param("firstName") String firstName, @Param("lastName") String lastName);
 
-    @Query(" from StudentEntity s where s.firstName = ?1 and s.lastName like ?2  and s.age=100  and s.remove=0 ")
+    // 03参数定位分页
+    @Query(" from StudentEntity s where s.firstName = ?1 and s.lastName like ?2 and s.age=100 ")
     Page<StudentEntity> queryByParams(@Param("firstName") String firstName, @Param("lastName") String lastName, Pageable pageable);
 
+    // 04原生SQL
     @Query(value = " select * from tb_student_jpa t where t.id =:id ", nativeQuery = true)
     String getPlayUrls(@Param("id") String id);
 
+    // 05Example_实例查询
     ExampleMatcher matcher = ExampleMatcher.matching().withMatcher("name", ExampleMatcher.GenericPropertyMatchers.startsWith()) // 姓名采用“开始匹配”的方式查询
             .withIgnorePaths("int");  // 忽略属性：是否关注。因为是基本类型，需要忽略掉
+
+    /*===========================删除操作==============================*/
+    @Transactional
+    int deleteByAge(Integer age);
+
+    @Query(" delete from StudentEntity s where s.age = ?1 ")
+    @Transactional
+    int doDeleteAge(@Param("age") Integer age);
 }

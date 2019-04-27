@@ -22,5 +22,5 @@ import javax.persistence.*;
 public class BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String userId;
+    private Integer id;
 }

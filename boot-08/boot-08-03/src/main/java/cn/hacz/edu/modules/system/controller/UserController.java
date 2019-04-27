@@ -1,5 +1,6 @@
-package cn.hacz.edu.modules.system;
+package cn.hacz.edu.modules.system.controller;
 
+import cn.hacz.edu.modules.system.dao.StudentDaoI;
 import cn.hacz.edu.modules.system.dao.UserDaoI;
 import cn.hacz.edu.modules.system.entity.UserEntity;
 import cn.hacz.edu.modules.system.service.UserServiceI;
@@ -24,6 +25,8 @@ public class UserController {
     private UserServiceI userServiceI;
     @Autowired
     private UserDaoI userDaoI;
+    @Autowired
+    private StudentDaoI studentDaoI;
 
     @PostMapping(value = "/getUser")
     public List<UserEntity> getUser() {

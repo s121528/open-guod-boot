@@ -8,9 +8,9 @@ spring:
 # 02数据库连接基础配置
   datasource:
     username: root
-    password: 123654
+    password: passw0rd
 #    url: jdbc:mysql:///test   数据库简写方式
-    url: jdbc:mysql://127.0.0.1:3306/boot
+    url: jdbc:mysql://127.0.0.1:3306/jpa
     driver-class-name: com.mysql.jdbc.Driver
 # 03ORM产品配置
   jpa:
