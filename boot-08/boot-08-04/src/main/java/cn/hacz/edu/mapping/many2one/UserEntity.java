@@ -37,6 +37,7 @@ public class UserEntity {
     /**
      * 属性描述：用户组
      * 规律02：双向关系要在程序中设置双向关联
+     * 配置规则：一般以多的一端为主,先配置多的一端
      */
     @ManyToOne(cascade = {CascadeType.ALL}, fetch = FetchType.EAGER)
     @JoinColumn(name = "group_id")

@@ -16,6 +16,9 @@ import javax.persistence.*;
  * @date 日期:2018/11/21 时间:20:49
  * @JDK 1.8
  * @Description 功能模块：丈夫，数据库只有一种关系：外键；以妻子为主导的双向外键关联
+ * a)	transient：内存中一个对象，没ID,缓存中也没有
+ * b)	persistent：内存中有，缓存中有，数据库有（ID)
+ * c)	detached：内存有，缓存没有，数据库有，ID
  */
 @Data
 @NoArgsConstructor
