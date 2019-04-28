@@ -16,7 +16,7 @@ spring:
   jpa:
     show-sql: true  # 显示执行的SQL语句
     hibernate:
-      ddl-auto: create     # 数据库创建方式（property: none, validate, update, create, and create-drop）
+      ddl-auto: none     # 数据库创建方式（property: none, validate, update, create, and create-drop）
       naming:   # 命名配置（默认是遇到大写字母 加"_"的命名SpringPhysicalNamingStrategy；无修改命名PhysicalNamingStrategyStandardImpl）
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
 #        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl

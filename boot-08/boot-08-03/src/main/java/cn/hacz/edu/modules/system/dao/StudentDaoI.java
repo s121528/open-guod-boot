@@ -93,7 +93,7 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
     List<StudentEntity> findByAgeIn(List<Integer> age);
 
     /*===========================动态查询==============================*/
-    // 01对象作为参数传输
+    // 01对象作为参数传输，@Param是地处Dao层，是为了传递多个参数，解决的是可读性和直观性
     @Modifying
     @Transactional
     @Query(" update StudentEntity s set s.age =:#{#studentVo.age} where s.age =:#{#age} ")
@@ -102,6 +102,9 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
     @Query(value = " from StudentEntity s where s.firstName=:#{#studentVo.firstName} and s.age=:#{#studentVo.age} ")
     List<StudentEntity> findParamsVo(@Param("studentVo") StudentVo studentVo);
 
+    @Query(value = "select s.firstName,s.lastName,s.age from StudentEntity s where s.firstName like %:firstName%")
+    List<StudentEntity> findByNameMatch(@Param("firstName") String firstName);
+
     // 02字符串作为参数
     @Modifying
     @Transactional
@@ -109,7 +112,7 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
     int updateTransId(@Param("firstName") String firstName, @Param("lastName") String lastName);
 
     // 03参数定位分页
-    @Query(" from StudentEntity s where s.firstName = ?1 and s.lastName like ?2 and s.age=100 ")
+    @Query(value = " from StudentEntity s where s.firstName = ?1 and s.lastName like ?2 and s.age=0 ")
     Page<StudentEntity> queryByParams(@Param("firstName") String firstName, @Param("lastName") String lastName, Pageable pageable);
 
     // 04原生SQL
@@ -124,7 +127,17 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
     @Transactional
     int deleteByAge(Integer age);
 
-    @Query(" delete from StudentEntity s where s.age = ?1 ")
+    @Modifying
+    @Query(" delete from StudentEntity s where s.age = ?1 and s.firstName = ?2 ")
     @Transactional
-    int doDeleteAge(@Param("age") Integer age);
+    int doHqlDeleteAge(Integer age, String firstName);
+
+    @Modifying
+    @Query(nativeQuery = true, value = " delete from tb_student_jpa where age =?1 ")
+    @Transactional
+    int doSqlDeleteAge(Integer age);
+
+    /*===========================多表操作==============================*/
+    // left join fetch & join fetch
+
 }

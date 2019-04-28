@@ -1,7 +1,9 @@
 package cn.hacz.edu.modules.system.entity;
 
 import cn.hacz.edu.modules.system.entity.base.BaseEntity;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -18,6 +20,8 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "tb_student_jpa")
+@NoArgsConstructor
+@AllArgsConstructor
 public class StudentEntity extends BaseEntity {
     /**
      * 属性描述：

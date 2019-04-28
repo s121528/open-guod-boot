@@ -37,6 +37,10 @@ public class CommonHql {
         return this.entityManager.unwrap(Session.class);
     }
 
+    public Session getSessionDelegate() {
+        return (Session) entityManager.getDelegate();
+    }
+
     public void save() {
         for (int i = 0; i < 10; i++) {
             CommonEntity commonEntity = new CommonEntity();
