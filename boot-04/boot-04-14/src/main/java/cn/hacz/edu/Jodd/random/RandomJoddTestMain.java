@@ -13,6 +13,6 @@ import jodd.util.RandomStringUtil;
  */
 public class RandomJoddTestMain {
     public static void main(String[] args) {
-        System.out.println(RandomStringUtil.randomNumeric(4));
+        System.out.println(RandomStringUtil.randomNumeric(24));
     }
 }
