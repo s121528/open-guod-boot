@@ -13,7 +13,11 @@
     <artifactId>boot-19</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <!-- Docker -->
         <module>boot-19-01</module>
+        <!-- Docker-Compose -->
+        <!-- K8s -->
+        <!-- Rancher -->
     </modules>
 
 </project>
