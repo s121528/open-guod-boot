@@ -4,8 +4,6 @@ import cn.hacz.edu.entity.Book;
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 import org.springframework.stereotype.Repository;
 
-import java.io.Serializable;
-
 /**
  * project -
  *
@@ -16,5 +14,5 @@ import java.io.Serializable;
  * @Description 功能模块：
  */
 @Repository
-public interface BookDaoI extends ElasticsearchRepository<Book, Serializable> {
+public interface BookDaoI extends ElasticsearchRepository<Book, Long> {
 }

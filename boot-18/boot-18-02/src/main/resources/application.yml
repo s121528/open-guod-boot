@@ -1,0 +1,10 @@
+#url\u76F8\u5173\u914D\u7F6E\uFF0C\u8FD9\u91CC\u914D\u7F6Eurl\u7684\u57FA\u672Curl
+server:
+  port: 8080
+spring:
+  ## Elasticsearch\u914D\u7F6E\u6587\u4EF6\uFF08\u5FC5\u987B\uFF09
+  ## \u8BE5\u914D\u7F6E\u548CElasticsearch\u672C\u5730\u6587\u4EF6config\u4E0B\u7684elasticsearch.yml\u4E2D\u7684\u914D\u7F6E\u4FE1\u606F\u6709\u5173
+  data:
+    elasticsearch:
+      cluster-name: my-application
+      cluster-nodes: 192.168.100.16:9300
