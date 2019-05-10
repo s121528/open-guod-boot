@@ -32,7 +32,8 @@ public class CarAutoConfiguration {
     private CarProperties properties;
 
     @Bean
-    @ConditionalOnMissingBean(CarService.class)// 当容器中没有指定Bean的情况下，自动配置carService类
+    @ConditionalOnMissingBean(CarService.class)
+    // 当容器中没有指定Bean的情况下，自动配置carService类
     public CarService carService() {
         CarService personService = new CarService(properties);
         return personService;
