@@ -1,7 +1,7 @@
 package cn.hacz.edu.exception;
 
 
-import cn.hacz.edu.modules.system.vo.ResultEnum;
+import cn.hacz.edu.vo.ResultEnum;
 
 /**
  * project - GitHub整理 Gitee开源系统

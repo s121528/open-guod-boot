@@ -4,7 +4,7 @@ import cn.hacz.edu.base.comment.SysLog;
 import cn.hacz.edu.base.entity.EncryptField;
 import cn.hacz.edu.base.entity.SysLogInfoEntity;
 import cn.hacz.edu.base.vo.ApiResult;
-import cn.hacz.edu.modules.system.dao.LogDaoI;
+import cn.hacz.edu.dao.LogDaoI;
 import cn.hacz.edu.util.AseUtil;
 import cn.hutool.core.util.IdUtil;
 import com.alibaba.fastjson.JSON;

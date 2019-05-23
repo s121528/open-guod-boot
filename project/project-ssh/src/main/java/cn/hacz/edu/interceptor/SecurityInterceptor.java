@@ -1,9 +1,9 @@
 package cn.hacz.edu.interceptor;
 
 import cn.hacz.edu.base.vo.ApiResult;
-import cn.hacz.edu.modules.system.entity.UserEntity;
-import cn.hacz.edu.modules.system.service.UserServiceI;
-import cn.hacz.edu.modules.system.util.TokenUtils;
+import cn.hacz.edu.entity.UserEntity;
+import cn.hacz.edu.service.UserServiceI;
+import cn.hacz.edu.util.TokenUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
