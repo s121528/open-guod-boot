@@ -136,7 +136,6 @@ Icon
 !wrapper/*.jar
 !**/wrapper/*.jar
 boot-01/boot-01-02/src/main/java/cn/hacz/edu/config/
-boot-04/boot-04-08/src/
 boot-08/boot-08-10/src/
 boot-10/boot-10-02/src/test/
 boot-11/boot-11-02/src/
