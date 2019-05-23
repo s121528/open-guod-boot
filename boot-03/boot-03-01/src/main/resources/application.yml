@@ -21,6 +21,7 @@ server:
   port: 8008
 spring:
   profiles: prod
+# 日志配置
 logging:
   config: classpath:spring-logback.xml
   level:
