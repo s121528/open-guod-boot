@@ -56,5 +56,4 @@ public class UserServiceImpl implements UserServiceI {
     public List<UserResVo> selectUserObj(Map parameter) {
         return userMapper.selectUserObj(parameter);
     }
-
 }

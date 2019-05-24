@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="cn.hacz.edu.dao.UserMapper">
-    <!--auto generated Code-->
+    <!-- ResultMap可以处理更加复杂的映射关系，我们可以自由定制我们需要的映射规则，这也是我们想要的效果 -->
     <resultMap id="BaseResultMap" type="cn.hacz.edu.entity.UserEntity">
         <result column="id" property="id" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
@@ -15,7 +15,6 @@
         <result column="name" property="name" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <!--auto generated Code-->
     <sql id="Base_Column_List">
         id,
         name,
@@ -24,7 +23,6 @@
         birthday
     </sql>
 
-    <!--auto generated Code-->
     <insert id="insert" useGeneratedKeys="true" keyProperty="userEntity.id">
         INSERT INTO user_entity (
             id,
@@ -41,7 +39,6 @@
         )
     </insert>
 
-    <!--auto generated Code-->
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userEntity.id">
         INSERT INTO user_entity
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -66,7 +63,6 @@
         </trim>
     </insert>
 
-    <!--auto generated Code-->
     <insert id="insertList">
         INSERT INTO user_entity (
         id,
@@ -86,7 +82,6 @@
         </foreach>
     </insert>
 
-    <!--auto generated Code-->
     <update id="updateByPrimaryKeySelective">
         UPDATE user_entity
         <set>
@@ -98,6 +93,7 @@
         WHERE id = #{userEntity.id,jdbcType=INTEGER}
     </update>
 
+    <!-- resultMap: 自定义结果集映射规则 -->
     <select id="selectUser" resultMap="UserResultMap">
         select * from user_entity
         where name = #{0} and age = #{1}
