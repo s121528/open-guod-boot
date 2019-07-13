@@ -11,6 +11,5 @@ package cn.hacz.edu.spring.string;
  */
 public class MainLangStringUtils {
     public static void main(String[] args) {
-
     }
 }

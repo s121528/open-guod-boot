@@ -67,7 +67,7 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
      * 所以我觉得它类似
      * StudentEntity findByFirstName(String firstName);
      *
-     * @see https://docs.spring.io/spring-data/jpa/docs/2.1.5.RELEASE/reference/html/#jpa.repositories
+     * @see 'https://docs.spring.io/spring-data/jpa/docs/2.1.5.RELEASE/reference/html/#jpa.repositories'
      */
     StudentEntity findByFirstNameLike(String firstName);
 

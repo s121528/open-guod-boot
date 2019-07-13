@@ -1,9 +1,7 @@
 package cn.hacz.edu.controller;
 
-import cn.hacz.edu.entity.StudentEntity;
-import cn.hacz.edu.service.UserServiceI;
 import cn.hacz.edu.dao.StudentDaoI;
-import cn.hacz.edu.dao.UserDaoI;
+import cn.hacz.edu.entity.StudentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -26,10 +24,6 @@ import java.util.Map;
  */
 @RestController
 public class UserController {
-    @Autowired
-    private UserServiceI userServiceI;
-    @Autowired
-    private UserDaoI userDaoI;
     @Autowired
     private StudentDaoI studentDaoI;
 

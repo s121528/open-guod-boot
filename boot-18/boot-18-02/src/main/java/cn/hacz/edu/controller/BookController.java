@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * project -
  *
@@ -23,9 +26,17 @@ public class BookController {
     @GetMapping(value = "/create")
     public String create() {
         Book book = new Book();
-        book.setId(1);
         book.setAuthor("guodd");
         book.setBookName("guodd");
         return bookDaoI.save(book).toString();
+    }
+
+    @GetMapping("/get")
+    public String getAll() {
+        Iterable<Book> iterable = bookDaoI.findAll();
+        List<Book> list = new ArrayList<>();
+        iterable.forEach(list::add);
+        System.out.println(list);
+        return "成功！";
     }
 }
