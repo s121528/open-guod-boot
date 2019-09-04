@@ -11,7 +11,7 @@ import cn.hacz.edu.properties.CarProperties;
  * @JDK 1.8
  * @Description 功能模块：
  */
-public class CarService {
+public class CarService implements GoAble {
     private CarProperties properties;
 
     public CarService(CarProperties properties) {
@@ -27,6 +27,11 @@ public class CarService {
     }
 
     public int getCarWeight() {
+        return properties.getWeight();
+    }
+
+    @Override
+    public int go() {
         return properties.getWeight();
     }
 }

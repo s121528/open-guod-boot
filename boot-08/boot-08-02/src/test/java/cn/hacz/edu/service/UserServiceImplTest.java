@@ -1,7 +1,7 @@
 package cn.hacz.edu.service;
 
 import cn.hacz.edu.dao.UserDaoI;
-import cn.hacz.edu.domain.entity.StudentEntity;
+import cn.hacz.edu.entity.StudentEntity;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

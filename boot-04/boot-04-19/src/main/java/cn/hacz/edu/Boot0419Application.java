@@ -4,7 +4,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 /**
- * project - GitHub整理 综合客户服务系统
+ * project - GitHub整理
  *
  * @author guod
  * @version 1.0

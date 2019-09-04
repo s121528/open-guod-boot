@@ -1,5 +1,7 @@
 package cn.hacz.edu.properties;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
@@ -11,26 +13,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @JDK 1.8
  * @Description 功能模块：
  */
+@Setter
+@Getter
 @ConfigurationProperties(prefix = "car")
 public class CarProperties {
     // 价格
     private int price;
     // 重量
     private int weight;
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
-    public int getWeight() {
-        return weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
 }

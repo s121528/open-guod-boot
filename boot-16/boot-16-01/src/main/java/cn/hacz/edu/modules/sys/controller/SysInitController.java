@@ -3,7 +3,7 @@ package cn.hacz.edu.modules.sys.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * project - GitHub整理 综合客户服务系统
+ * project - GitHub整理
  *
  * @author dong
  * @version 1.0

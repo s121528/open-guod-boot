@@ -10,7 +10,7 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import javax.sql.DataSource;
 
 /**
- * project - GitHub整理 综合客户服务系统
+ * project - GitHub整理
  *
  * @author guod
  * @version 1.0

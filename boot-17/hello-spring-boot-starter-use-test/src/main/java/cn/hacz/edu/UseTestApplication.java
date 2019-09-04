@@ -34,6 +34,6 @@ public class UseTestApplication {
 
     @GetMapping("/get/weight")
     public int getCarWeight() {
-        return carService.getCarWeight();
+        return carService.go();
     }
 }

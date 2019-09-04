@@ -1,6 +1,6 @@
 package cn.hacz.edu.dao;
 
-import cn.hacz.edu.domain.entity.StudentEntity;
+import cn.hacz.edu.entity.StudentEntity;
 
 import java.util.List;
 

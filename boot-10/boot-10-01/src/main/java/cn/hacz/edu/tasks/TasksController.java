@@ -1,4 +1,4 @@
-package cn.hacz.edu;
+package cn.hacz.edu.tasks;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;

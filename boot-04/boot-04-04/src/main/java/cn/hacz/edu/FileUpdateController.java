@@ -19,6 +19,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -44,7 +45,7 @@ public class FileUpdateController {
      */
     private void executeUpload(String uploadDir, MultipartFile file) throws Exception {
         //文件后缀名
-        String suffix = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf("."));
+        String suffix = Objects.requireNonNull(file.getOriginalFilename()).substring(file.getOriginalFilename().lastIndexOf("."));
         //上传文件名
         String filename = UUID.randomUUID() + suffix;
         //服务器端保存的文件对象
@@ -117,12 +118,11 @@ public class FileUpdateController {
     /**
      * 功能描述：显示图片接口
      *
-     * @param request
      * @param response
      * @throws Exception
      */
     @RequestMapping(value = "/image", method = RequestMethod.GET)
-    public void imageDisplay(HttpServletRequest request, HttpServletResponse response) throws Exception {
+    public void imageDisplay(HttpServletResponse response) throws Exception {
         File file = new File("F:\\aaa.jpg");
         OutputStream outputStream = response.getOutputStream();
         // 进行文件下载的指定，设置强制下载不打开
@@ -139,12 +139,11 @@ public class FileUpdateController {
     /**
      * 功能：下载图片接口（文件）
      *
-     * @param request
      * @param response
      * @throws IOException
      */
     @RequestMapping(value = "/downloadFile")
-    public void downloadFile(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void downloadFile(HttpServletResponse response) throws IOException {
         File file = new File("F:\\aaa.jpg");
         OutputStream outputStream = response.getOutputStream();
         // 进行文件下载的指定，设置强制下载不打开

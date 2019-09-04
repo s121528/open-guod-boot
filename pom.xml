@@ -43,7 +43,7 @@
         <module>boot-04</module>
         <!-- 实战spring boot中简洁的JSON和XML数据交互+Excel导入导出-->
         <module>boot-05</module>
-        <!-- 实战spring boot中Rest full接口-->
+        <!-- 实战spring boot中Rest full接口，HttpMessageConverter消息转换器，OKHttp -->
         <module>boot-06</module>
         <!-- 实战spring boot中让传输数据更安全 -->
         <module>boot-07</module>

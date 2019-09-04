@@ -1,4 +1,4 @@
-package cn.hacz.edu.domain.entity;
+package cn.hacz.edu.entity;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
 package cn.hacz.edu.dao.impl;
 
 import cn.hacz.edu.dao.UserDaoI;
-import cn.hacz.edu.domain.entity.StudentEntity;
+import cn.hacz.edu.entity.StudentEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

@@ -24,8 +24,8 @@ public class MailUtilService {
 
     public void sendSimpleMail() {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("guodd369@163.com");
-        message.setTo("1007916121@qq.com");
+        message.setFrom("1007916121@qq.com");
+        message.setTo("18838177689@163.com");
         message.setSubject("主题：重新收到");
         message.setText("测试邮件内容");
         try {
