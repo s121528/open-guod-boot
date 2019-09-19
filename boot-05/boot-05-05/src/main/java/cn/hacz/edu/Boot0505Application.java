@@ -3,6 +3,7 @@ package cn.hacz.edu;
 import cn.afterturn.easypoi.excel.ExcelImportUtil;
 import cn.afterturn.easypoi.excel.entity.ImportParams;
 import cn.hacz.edu.util.ExcelFileUtil;
+import cn.hacz.edu.vo.DeviceMasterExcel;
 import cn.hacz.edu.vo.Person;
 import cn.hacz.edu.vo.UserVo;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
@@ -74,10 +75,10 @@ public class Boot0505Application {
         long start = new Date().getTime();
         file.getName();
         // PoiPublicUtil.getWebRootPath();
-        List<UserVo> list = null;
+        List<DeviceMasterExcel> list = null;
         try {
             // 直接通过输入流的方式
-            list = ExcelImportUtil.importExcel(file.getInputStream(), UserVo.class, params);
+            list = ExcelImportUtil.importExcel(file.getInputStream(), DeviceMasterExcel.class, params);
         } catch (Exception e) {
             e.printStackTrace();
         }
