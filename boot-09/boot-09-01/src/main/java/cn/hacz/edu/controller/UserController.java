@@ -1,4 +1,4 @@
-package cn.hacz.edu;
+package cn.hacz.edu.controller;
 
 import cn.hacz.edu.service.UserServiceI;
 import cn.hacz.edu.entity.UserEntity;

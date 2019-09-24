@@ -12,7 +12,9 @@
     <artifactId>boot-18-02</artifactId>
     <packaging>pom</packaging>
     <modules>
+        <!-- V7.0以前 -->
         <module>boot-18-02-01</module>
+        <!-- V7.0以后 -->
         <module>boot-18-02-02</module>
     </modules>
 

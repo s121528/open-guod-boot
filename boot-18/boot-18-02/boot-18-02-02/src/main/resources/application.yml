@@ -1,0 +1,5 @@
+elasticsearch:
+  esHost: 211.144.5.80
+  esPort: 30136
+  esName: es-application
+  type: http

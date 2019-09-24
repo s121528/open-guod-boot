@@ -31,4 +31,7 @@ public interface UserMapper {
 
     // 方法4：Java Bean传参法，这种方法很直观，但需要建一个实体类，扩展不容易，需要加属性，看情况使用。
     List<UserResVo> selectUserObj(Map<String, Object> params);
+
+    // 方法5：调用存储过程
+    UserResVo countDevicesName();
 }

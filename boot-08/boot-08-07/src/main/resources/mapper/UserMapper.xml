@@ -6,7 +6,7 @@
         <result column="id" property="id" jdbcType="INTEGER"/>
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="age" property="age" jdbcType="INTEGER"/>
-        <result column="class_num" property="classNum" jdbcType="INTEGER"/>
+        <result column="class_num" property="class_um" jdbcType="INTEGER"/>
         <result column="birthday" property="birthday" jdbcType="TIMESTAMP"/>
     </resultMap>
 
@@ -25,17 +25,17 @@
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="userEntity.id">
         INSERT INTO user_entity (
-            id,
-            name,
-            age,
-            class_num,
-            birthday
+        id,
+        name,
+        age,
+        class_num,
+        birthday
         ) VALUES (
-            #{userEntity.id,jdbcType=INTEGER},
-            #{userEntity.name,jdbcType=VARCHAR},
-            #{userEntity.age,jdbcType=INTEGER},
-            #{userEntity.classNum,jdbcType=INTEGER},
-            #{userEntity.birthday,jdbcType=TIMESTAMP}
+        #{userEntity.id,jdbcType=INTEGER},
+        #{userEntity.name,jdbcType=VARCHAR},
+        #{userEntity.age,jdbcType=INTEGER},
+        #{userEntity.classNum,jdbcType=INTEGER},
+        #{userEntity.birthday,jdbcType=TIMESTAMP}
         )
     </insert>
 
@@ -117,4 +117,15 @@
         where name = #{name} and age = #{age}
     </select>
 
+    <!-- 调用存储过程，必须为CALLABLE，告诉MyBatis去执行存储过程 -->
+    <select id="countDevicesName" parameterType="UserReqVo" useCache="false" statementType="CALLABLE"
+            resultType="UserResVo">
+        <![CDATA[
+
+
+            call countDevicesName();
+
+
+        ]]>
+    </select>
 </mapper>
