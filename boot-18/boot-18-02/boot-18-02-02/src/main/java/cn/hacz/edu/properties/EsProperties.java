@@ -18,5 +18,5 @@ public class EsProperties {
 
     private String esName;
 
-    private String type;
+    private String schema;
 }
