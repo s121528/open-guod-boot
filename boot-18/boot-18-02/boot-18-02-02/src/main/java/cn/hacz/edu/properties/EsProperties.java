@@ -19,4 +19,8 @@ public class EsProperties {
     private String esName;
 
     private String schema;
+
+    private String userName;
+
+    private String password;
 }

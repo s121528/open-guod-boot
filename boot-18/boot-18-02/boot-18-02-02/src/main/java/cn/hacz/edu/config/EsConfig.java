@@ -3,7 +3,13 @@ package cn.hacz.edu.config;
 import java.util.ArrayList;
 
 import cn.hacz.edu.properties.EsProperties;
+import org.apache.commons.codec.binary.Base64;
 import org.apache.http.HttpHost;
+import org.apache.http.auth.AuthScope;
+import org.apache.http.auth.UsernamePasswordCredentials;
+import org.apache.http.client.CredentialsProvider;
+import org.apache.http.impl.client.BasicCredentialsProvider;
+import org.apache.http.message.BasicHeader;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestClientBuilder;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -33,6 +39,7 @@ public class EsConfig {
 
     private RestClientBuilder builder;
 
+
     @PostConstruct
     public void init() {
         hostList = new ArrayList<>();
@@ -47,6 +54,9 @@ public class EsConfig {
         builder = RestClient.builder(hostList.toArray(new HttpHost[0]));
         setConnectTimeOutConfig();
         setMutiConnectConfig();
+        // 用户授权配置
+        String auth = Base64.encodeBase64String((esProperties.getUserName() + ":" + esProperties.getPassword()).getBytes());
+        builder.setDefaultHeaders(new BasicHeader[]{new BasicHeader("Authorization", "Basic " + auth)});
         RestHighLevelClient client = new RestHighLevelClient(builder);
         return client;
     }

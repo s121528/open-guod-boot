@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Order(1)
 public class Runner1 implements CommandLineRunner {
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         System.out.println("我应该是初始化资源第一名");
     }
 }
