@@ -5,6 +5,7 @@ import java.net.Authenticator;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.hacz.edu.vo.ApiResult;
 import cn.hacz.edu.vo.UserInfoRes;
 import cn.hutool.json.JSONUtil;
 import org.apache.http.HttpEntity;
@@ -50,10 +51,10 @@ public class UserController {
         System.out.println(EntityUtils.toString(response.getEntity()));
     }
 
-    @GetMapping(value = "test")
-    public void test() throws IOException {
+    @GetMapping(value = "/test")
+    public ApiResult test() throws IOException {
         SearchRequest searchRequest = new SearchRequest();
-        searchRequest.indices("world");
+        searchRequest.indices("test_search_index");
 
         SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
         TermQueryBuilder termQuery01 = QueryBuilders.termQuery("username", "username_1753");
@@ -73,6 +74,6 @@ public class UserController {
                     users.add(userInfoRes);
                 }
         );
-        System.out.println(users);
+        return ApiResult.ok(users).put("total", hits.getTotalHits());
     }
 }

@@ -12,6 +12,11 @@
     <artifactId>boot-18-02-02</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.hacz.edu</groupId>
+            <artifactId>common-01-01</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
         <!-- ES 7.3 -->
         <dependency>
             <groupId>org.elasticsearch</groupId>
