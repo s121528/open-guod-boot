@@ -19,10 +19,10 @@ import java.io.File;
  */
 @Configuration
 public class TomcatConfig {
-    @Bean
+    /*@Bean
     public ConfigurableServletWebServerFactory webServerFactory() {
         TomcatServletWebServerFactory factory = new TomcatServletWebServerFactory();
-        factory.setDocumentRoot(new File("D:\\2018dev\\code\\MyGitee\\open-guod-boot\\boot-02\\boot-02-03\\src\\main\\webapp\\"));
+        factory.setDocumentRoot(new File("D:\\dev\\2019dev\\code\\idea-workspace\\GitHub\\open-guod-boot\\boot-02\\boot-02-03\\src\\main\\webapp\\"));
         factory.addConnectorCustomizers(
                 connector -> {
                     Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
@@ -31,5 +31,5 @@ public class TomcatConfig {
                 }
         );
         return factory;
-    }
+    }*/
 }

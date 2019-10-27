@@ -3,6 +3,8 @@ package cn.hacz.edu.apache.io;
 import org.apache.commons.io.FileUtils;
 
 import java.io.File;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 /**
@@ -16,9 +18,9 @@ import java.util.List;
  */
 public class ReadFileUtilsTestMain {
     public static void main(String[] args) throws Exception {
+        Charset encoding = StandardCharsets.UTF_8;
         // 定义一个文件
         File f = new File("D:/111.xml");
-        String encoding = "UTF-8";
 
         // 01.把文件的所有内容放到String里,第二个参数是编码可选的..
         System.out.println("-------------把文件的所有内容读到String中---------");

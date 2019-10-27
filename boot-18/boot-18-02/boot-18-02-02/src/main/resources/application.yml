@@ -2,6 +2,6 @@ elasticsearch:
   esHost: 211.144.5.80
   esPort: 30136
   schema: http
-  esName: es-application
+  esName: es-prod-tj
   userName: elastic
   password: passw0rd
