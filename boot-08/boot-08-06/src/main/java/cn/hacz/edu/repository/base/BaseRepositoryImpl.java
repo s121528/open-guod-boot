@@ -458,6 +458,7 @@ public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRep
         T result = null;
         try {
             // result = (T) Query.createQuery(condition, values).getSingleResult();
+            return null;
         } catch (NoResultException e) {
             e.printStackTrace();
         }

@@ -15,6 +15,7 @@ spring:
   # 03ORM产品配置
   jpa:
     show-sql: true  # 显示执行的SQL语句
+    open-in-view: false
     hibernate:
       ddl-auto: create     # 数据库创建方式（property: none, validate, update, create, and create-drop）
       naming:   # 命名配置（默认是遇到大写字母 加"_"的命名SpringPhysicalNamingStrategy；无修改命名PhysicalNamingStrategyStandardImpl）

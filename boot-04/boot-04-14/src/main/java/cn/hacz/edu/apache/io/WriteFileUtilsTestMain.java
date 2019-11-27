@@ -30,7 +30,7 @@ public class WriteFileUtilsTestMain {
         FileUtils.write(f, s, c);
         // 把内容追加进文件
         FileUtils.write(f, s, c, true);
-        //04.把一个List写进文件,List的每一个元素是一行
+        // 把一个List写进文件，List的每一个元素是一行
         FileUtils.writeLines(f, lines);
         FileUtils.writeLines(f, lines, true);
         FileUtils.writeLines(f, "UTF-8", lines, true);

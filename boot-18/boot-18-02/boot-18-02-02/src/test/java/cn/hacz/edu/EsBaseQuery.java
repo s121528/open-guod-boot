@@ -1,14 +1,5 @@
 package cn.hacz.edu;
 
-import cn.hacz.edu.dto.BookDto;
-import cn.hacz.edu.entity.FieldMapping;
-import cn.hacz.edu.entity.GwAdvice;
-import cn.hacz.edu.util.ElasticSearchUtils;
-import cn.hacz.edu.vo.ApiResult;
-import cn.hacz.edu.vo.UserInfoRes;
-import cn.hutool.json.JSON;
-import cn.hutool.json.JSONUtil;
-import org.apache.commons.lang3.StringUtils;
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.DocWriteRequest;
 import org.elasticsearch.action.delete.DeleteRequest;
@@ -20,27 +11,20 @@ import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
-import org.elasticsearch.common.xcontent.XContentType;
-import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.rest.RestStatus;
-import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.elasticsearch.search.sort.SortOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author guodd
@@ -49,8 +33,6 @@ import java.util.*;
 @SpringBootTest
 @RunWith(SpringRunner.class)
 public class EsBaseQuery {
-    @Autowired
-    private RestClient restClient;
     @Autowired
     private RestHighLevelClient restHighLevelClient;
 

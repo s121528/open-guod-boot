@@ -1,6 +1,7 @@
 package cn.hacz.edu.apache.io;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.ui.Model;
 
 import javax.xml.bind.DatatypeConverter;
 import java.io.InputStream;

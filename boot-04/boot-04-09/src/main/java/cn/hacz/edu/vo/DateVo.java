@@ -21,11 +21,9 @@ import java.util.Date;
  * @Description 功能模块：时间的类型vo对象
  */
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class DateVo {
     /**
-     * @DatetimeFormat 是将String转换成LocalDateTime, 一般前台给后台传值时用
+     * @DatetimeFormat 是将String转换成LocalDateTime，一般前台给后台传值时用
      * @JsonFormat(pattern="yyyy-MM-dd") 将LocalDateTime转换成String, 一般后台传值给前台时
      * 注意：@DatetimeFormat和@JsonFormat不能同时写在一个属性上，如果写在一个上面@DatetimeFormat会失效
      */
@@ -38,8 +36,4 @@ public class DateVo {
     private LocalDateTime localDateTime;
     private LocalDate localDate;
     private LocalTime localTime;
-
-    public static void main(String[] args) {
-        System.out.println(System.currentTimeMillis());
-    }
 }

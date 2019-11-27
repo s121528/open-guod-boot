@@ -4,9 +4,14 @@ import cn.hutool.setting.Setting;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
+import org.apache.commons.io.FileUtils;
 import org.springframework.core.io.support.PropertiesLoaderUtils;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -31,5 +36,13 @@ public class MainTest {
         // 方式03
         Setting set = new Setting("conf/file.properties");
         System.out.println(set.get("name"));
+
+        // spring的工具类
+        File file = ResourceUtils.getFile("classpath:conf/pay.properties");
+        List<String> list = FileUtils.readLines(file, StandardCharsets.UTF_8);
+        for (String s : list) {
+            System.out.println(s);
+        }
+
     }
 }
