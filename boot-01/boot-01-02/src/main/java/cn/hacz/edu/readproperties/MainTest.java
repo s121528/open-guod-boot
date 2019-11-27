@@ -1,5 +1,7 @@
 package cn.hacz.edu.readproperties;
 
+import cn.hutool.core.io.resource.Resource;
+import cn.hutool.core.io.resource.ResourceUtil;
 import cn.hutool.setting.Setting;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
@@ -10,6 +12,7 @@ import org.springframework.util.ResourceUtils;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 import java.util.Properties;
@@ -29,10 +32,12 @@ public class MainTest {
         Configuration configuration = new PropertiesConfiguration("conf/pay.properties");
         String string = configuration.getString("pay.name");
         System.out.println(string);
+
         // 方式02
         Properties properties = PropertiesLoaderUtils.loadAllProperties("conf/pay.properties");
         String property = properties.getProperty("pay.name");
         System.out.println(property);
+
         // 方式03
         Setting set = new Setting("conf/file.properties");
         System.out.println(set.get("name"));
@@ -43,6 +48,5 @@ public class MainTest {
         for (String s : list) {
             System.out.println(s);
         }
-
     }
 }
