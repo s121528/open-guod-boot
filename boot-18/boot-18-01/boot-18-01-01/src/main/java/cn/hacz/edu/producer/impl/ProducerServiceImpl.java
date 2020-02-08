@@ -24,7 +24,6 @@ import org.springframework.util.concurrent.ListenableFutureCallback;
 @Service
 @Slf4j
 public class ProducerServiceImpl implements ProducerService {
-    private static final Logger logger = LoggerFactory.getLogger(ProducerServiceImpl.class);
 
     @Autowired
     private KafkaTemplate<String, String> template;
@@ -50,18 +49,18 @@ public class ProducerServiceImpl implements ProducerService {
         jsonObj.put("topic", topic);
         jsonObj.put("ts", System.currentTimeMillis() + "");
 
-        logger.info("json+++++++++++++++++++++  message = {}", jsonObj.toJSONString());
+        log.info("json+++++++++++++++++++++  message = {}", jsonObj.toJSONString());
 
         ListenableFuture<SendResult<String, String>> future = template.send(topic, jsonObj.toJSONString());
         future.addCallback(new ListenableFutureCallback<SendResult<String, String>>() {
             @Override
             public void onSuccess(SendResult<String, String> result) {
-                logger.info("msg OK. " + result.toString());
+                log.info("msg OK. " + result.toString());
             }
 
             @Override
             public void onFailure(Throwable ex) {
-                logger.error("msg send failed.", ex);
+                log.error("msg send failed.", ex);
             }
         });
     }

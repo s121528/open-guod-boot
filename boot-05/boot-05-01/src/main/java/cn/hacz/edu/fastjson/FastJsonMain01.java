@@ -12,7 +12,7 @@ import java.util.Map;
  * @version 3.0
  * @date 日期:2018/7/8 时间:10:34
  * @JDK 1.8
- * @Description 功能模块：
+ * @Description 功能模块：字符串转义和map组装
  */
 public class FastJsonMain01 {
     public static void main(String[] args) {

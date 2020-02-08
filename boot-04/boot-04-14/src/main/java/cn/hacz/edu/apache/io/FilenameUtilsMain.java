@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * @JDK 1.8
  * @Description 功能模块：文件操作
  */
-public class FilenameUtilsTestMain {
+public class FilenameUtilsMain {
     public static void main(String[] args) {
         File file = new File("f:a/b/c/d.txt");
         // 返回文件后缀名

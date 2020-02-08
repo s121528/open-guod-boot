@@ -69,6 +69,7 @@
         <module>boot-19</module>
         <!-- 支付宝/微信支付 -->
         <module>boot-20</module>
+        <!-- 实际业务场景 -->
         <module>project</module>
     </modules>
 
@@ -81,6 +82,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <!--<scope>test</scope>-->
         </dependency>
         <!-- 代码简化工具 -->
         <dependency>

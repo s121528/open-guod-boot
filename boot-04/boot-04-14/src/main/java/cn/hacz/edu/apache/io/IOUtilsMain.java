@@ -18,7 +18,7 @@ import java.util.Arrays;
  * @JDK 1.8
  * @Description 功能模块：文件操作工具类：IOUtils读取一个网页的源代码的代码
  */
-public class IOUtilsTestMain {
+public class IOUtilsMain {
     public static void main(String[] args) throws Exception {
         String encoding = "UTF-8";
         InputStream inputStream = new URL("http://www.baidu.com").openStream();

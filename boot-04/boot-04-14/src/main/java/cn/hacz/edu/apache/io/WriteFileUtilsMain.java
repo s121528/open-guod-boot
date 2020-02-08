@@ -18,7 +18,7 @@ import java.util.stream.Stream;
  * @JDK 1.8
  * @Description 功能模块：文件、流的操作
  */
-public class WriteFileUtilsTestMain {
+public class WriteFileUtilsMain {
     public static void main(String[] args) throws Exception {
         Charset c = StandardCharsets.UTF_8;
         // 定义一个文件

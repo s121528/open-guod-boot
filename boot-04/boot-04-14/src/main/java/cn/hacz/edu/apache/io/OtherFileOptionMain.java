@@ -19,7 +19,7 @@ import java.net.URL;
  * @JDK 1.8
  * @Description 功能模块：
  */
-public class OtherFileOptionTestMain {
+public class OtherFileOptionMain {
     public static void main(String[] args) throws Exception {
         File src = new File("f:/aa.txt");
         File dest = new File("f:/bb.txt");

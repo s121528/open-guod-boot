@@ -19,17 +19,19 @@ import java.util.List;
  * @Description 功能模块：
  */
 public class FastJsonMain02 {
+
     PersonEntity personEntity01 = new PersonEntity("guo", 22, "18838177689");
     PersonEntity personEntity02 = new PersonEntity("dong", 22, "18838177689");
 
     @Test
     public void fastJson01MainTest01() {
-        // 对象的序列化、
+        // 对象的序列化
         String s = JSON.toJSONString(personEntity01);
         System.out.println(s);
         // 反序列化（两种方式）
         JSONObject jsonObject = JSON.parseObject(s);
         System.out.println(jsonObject);
+
         PersonEntity personEntity = JSON.parseObject(s, PersonEntity.class);
         System.out.println(personEntity);
     }
