@@ -15,7 +15,7 @@
     <description>spring boot入门hello world！</description>
 
     <modules>
-        <!-- Spring boot简单项目的快速搭建 -->
+        <!-- Spring boot简单项目的快速搭建（多种启动方式：SpringApplication、SpringApplicationBuilder） -->
         <module>boot-01-01</module>
         <!-- Spring boot配置文件详解：配置文件的读取（properties、yml） -->
         <module>boot-01-02</module>
