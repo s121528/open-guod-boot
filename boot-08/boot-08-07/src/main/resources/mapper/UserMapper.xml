@@ -24,19 +24,16 @@
     </sql>
 
     <insert id="insert" useGeneratedKeys="true" keyProperty="userEntity.id">
-        INSERT INTO user_entity (
-        id,
-        name,
-        age,
-        class_num,
-        birthday
-        ) VALUES (
-        #{userEntity.id,jdbcType=INTEGER},
-        #{userEntity.name,jdbcType=VARCHAR},
-        #{userEntity.age,jdbcType=INTEGER},
-        #{userEntity.classNum,jdbcType=INTEGER},
-        #{userEntity.birthday,jdbcType=TIMESTAMP}
-        )
+        INSERT INTO user_entity (id,
+                                 name,
+                                 age,
+                                 class_num,
+                                 birthday)
+        VALUES (#{userEntity.id,jdbcType=INTEGER},
+                #{userEntity.name,jdbcType=VARCHAR},
+                #{userEntity.age,jdbcType=INTEGER},
+                #{userEntity.classNum,jdbcType=INTEGER},
+                #{userEntity.birthday,jdbcType=TIMESTAMP})
     </insert>
 
     <insert id="insertSelective" useGeneratedKeys="true" keyProperty="userEntity.id">
@@ -95,37 +92,39 @@
 
     <!-- resultMap: 自定义结果集映射规则 -->
     <select id="selectUser" resultMap="UserResultMap">
-        select * from user_entity
-        where name = #{0} and age = #{1}
+        select *
+        from user_entity
+        where name = #{0}
+          and age = #{1}
     </select>
 
     <select id="selectUserParam" resultMap="UserResultMap">
-        select * from user_entity
-        where name = #{name} and age = #{age}
+        select *
+        from user_entity
+        where name = #{name}
+          and age = #{age}
     </select>
 
     <select id="selectUserMap" parameterType="java.util.Map" resultMap="UserResultMap">
-        select * from user_entity
-        where name = #{name} and age = #{age}
+        select *
+        from user_entity
+        where name = #{name}
+          and age = #{age}
     </select>
 
     <!-- resultMap可以实现延迟加载，resultType无法实现延迟加载 -->
     <select id="selectUserObj" parameterType="UserReqVo" resultMap="UserResultMap">
-        select
-        age
+        select age
         from user_entity
-        where name = #{name} and age = #{age}
+        where name = #{name}
+          and age = #{age}
     </select>
 
     <!-- 调用存储过程，必须为CALLABLE，告诉MyBatis去执行存储过程 -->
     <select id="countDevicesName" parameterType="UserReqVo" useCache="false" statementType="CALLABLE"
             resultType="UserResVo">
         <![CDATA[
-
-
-            call countDevicesName();
-
-
+        call countDevicesName();
         ]]>
     </select>
 </mapper>

@@ -1,9 +1,12 @@
 package cn.hacz.edu.entity;
 
+import cn.hacz.edu.entity.base.Base01Entity;
 import cn.hacz.edu.entity.base.BaseEntity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -17,12 +20,14 @@ import javax.persistence.Table;
  * @JDK 1.8
  * @Description 功能模块：
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 @Entity
 @Table(name = "tb_student_jpa")
 @NoArgsConstructor
 @AllArgsConstructor
-public class StudentEntity extends BaseEntity {
+@Where(clause = "del_flag=0")
+public class StudentEntity extends Base01Entity {
     /**
      * 属性描述：
      */

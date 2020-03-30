@@ -16,7 +16,7 @@ import java.util.List;
  * @JDK 1.8
  * @Description 功能模块：文件操作工具类：FileUtils读取文件
  */
-public class ReadFileUtilsMain {
+public class ReadFileUtils {
     public static void main(String[] args) throws Exception {
         Charset encoding = StandardCharsets.UTF_8;
         // 定义一个文件

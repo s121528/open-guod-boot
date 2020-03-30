@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.Type;
+import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -15,8 +16,7 @@ import java.time.LocalDateTime;
  * @author guod
  * @version 1.0
  * @date 日期:2018/8/16 时间:10:09
- * @JDK 1.8
- * @Description 功能模块：
+ * @since 1.8
  */
 @Data
 @AllArgsConstructor
@@ -28,14 +28,10 @@ public class Base01Entity implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     /**
-     * 备注
-     */
-    @Column(name = "remark")
-    private String remark;
-    /**
      * 创建时间
      */
     @Column(name = "create_time")
+    @CreatedDate
     private LocalDateTime createTime;
     /**
      * 更新时间
@@ -56,9 +52,20 @@ public class Base01Entity implements Serializable {
      * 删除标识0-正常；1-删除
      * （true_false=T_F；numeric_boolean=0_1；yes_no=Y_N）
      */
-    @Type(type = "true_false")
-    @Column(name = "remove")
-    private Boolean remove;
+    @Type(type = "numeric_boolean")
+    @Column(name = "delFlag")
+    private Boolean delFlag;
+    /**
+     * 备注
+     */
+    @Column(name = "remark")
+    private String remark;
+    /**
+     * 大文本数据
+     */
+    @Lob
+    @Column(columnDefinition = "text")
+    private String text;
     /**
      * spare1
      */

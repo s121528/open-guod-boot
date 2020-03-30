@@ -31,7 +31,7 @@ public class UserVo {
     /**
      * 验证分组02
      */
-    public interface Register {
+    public interface Register extends Login{
     }
 
     @NotNull(message = "ID不能是空！", groups = Login.class)

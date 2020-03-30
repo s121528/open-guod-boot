@@ -5,9 +5,12 @@ import cn.hacz.edu.modules.sys.entity.base.BaseEntity;
 import org.hibernate.Query;
 import org.hibernate.SQLQuery;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.transform.Transformers;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 import java.io.Serializable;
 import java.math.BigInteger;
@@ -21,6 +24,13 @@ public class BaseDaoI<T> {
 
     @PersistenceContext
     private EntityManager entityManager;
+
+    @Autowired
+    private EntityManagerFactory entityManagerFactory;
+
+    public Session getSession() {
+        return entityManagerFactory.unwrap(SessionFactory.class).openSession();
+    }
 
     public Session getCurrentSession() {
         return entityManager.unwrap(Session.class);

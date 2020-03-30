@@ -17,8 +17,7 @@ import java.util.UUID;
  * @author guod
  * @version 1.0
  * @date 日期:2018/8/16 时间:10:09
- * @JDK 1.8
- * @Description 功能模块：
+ * @since .8
  */
 @Data
 @AllArgsConstructor

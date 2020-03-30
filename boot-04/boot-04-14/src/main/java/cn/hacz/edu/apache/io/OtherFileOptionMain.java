@@ -3,6 +3,7 @@ package cn.hacz.edu.apache.io;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.output.TeeOutputStream;
+import org.junit.Test;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import java.io.File;
@@ -16,10 +17,16 @@ import java.net.URL;
  * @author guod
  * @version 1.0
  * @date 日期:2018/10/10 时间:10:58
- * @JDK 1.8
- * @Description 功能模块：
+ * @since 1.8
  */
 public class OtherFileOptionMain {
+    @Test
+    public void createDir() throws Exception {
+        File file = new File("D:/zz/aa/test.txt");
+        FileUtils.forceMkdir(file);
+        
+    }
+
     public static void main(String[] args) throws Exception {
         File src = new File("f:/aa.txt");
         File dest = new File("f:/bb.txt");
@@ -56,5 +63,10 @@ public class OtherFileOptionMain {
         // 此处是Spring MVC上传时的文件接收对象
         CommonsMultipartFile mf = null;
         FileUtils.copyInputStreamToFile(mf.getInputStream(), new File(""));
+        // forceMkdir()，强制创建目录，包括任何必需但不存在的父目录
+        File uploadDirectory = new File("");
+        if (!uploadDirectory.exists()) {
+            FileUtils.forceMkdir(uploadDirectory);
+        }
     }
 }

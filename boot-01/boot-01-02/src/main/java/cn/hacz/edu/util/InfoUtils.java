@@ -6,8 +6,7 @@ package cn.hacz.edu.util;
  * @author guod
  * @version 1.0
  * @date 日期:2018/10/23 时间:10:15
- * @JDK 1.8
- * @Description 功能模块：
+ * @since 1.8
  */
 public class InfoUtils {
     public static String name;

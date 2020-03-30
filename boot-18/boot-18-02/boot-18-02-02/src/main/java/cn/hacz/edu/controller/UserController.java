@@ -1,11 +1,5 @@
 package cn.hacz.edu.controller;
 
-import java.io.IOException;
-import java.net.Authenticator;
-import java.util.ArrayList;
-import java.util.List;
-
-import cn.hacz.edu.vo.ApiResult;
 import cn.hacz.edu.vo.UserInfoRes;
 import cn.hutool.json.JSONUtil;
 import org.apache.http.HttpEntity;
@@ -23,6 +17,10 @@ import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author guodd
@@ -52,7 +50,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/test")
-    public ApiResult test() throws IOException {
+    public void test() throws IOException {
         SearchRequest searchRequest = new SearchRequest();
         searchRequest.indices("test_search_index");
 
@@ -74,6 +72,6 @@ public class UserController {
                     users.add(userInfoRes);
                 }
         );
-        return ApiResult.ok(users).put("total", hits.getTotalHits());
+        // return ApiResult.ok(users).put("total", hits.getTotalHits());
     }
 }

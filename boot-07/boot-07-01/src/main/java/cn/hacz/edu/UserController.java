@@ -34,7 +34,7 @@ public class UserController {
     }
 
     /**
-     * 功能描述：
+     * 功能描述：分组校验
      *
      * @param userVo
      * @param bindingResult

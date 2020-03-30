@@ -4,26 +4,28 @@ import org.apache.commons.io.IOUtils;
 import org.springframework.ui.Model;
 
 import javax.xml.bind.DatatypeConverter;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+import java.util.List;
 
 /**
- * project - GitHub整理
+ * 文件操作工具类：IOUtils读取一个网页的源代码的代码
  *
  * @author guod
  * @version 1.0
  * @date 日期:2018/7/13 时间:8:58
- * @JDK 1.8
- * @Description 功能模块：文件操作工具类：IOUtils读取一个网页的源代码的代码
+ * @since 1.8
  */
 public class IOUtilsMain {
     public static void main(String[] args) throws Exception {
-        String encoding = "UTF-8";
         InputStream inputStream = new URL("http://www.baidu.com").openStream();
         // 01 toString读取链接地址网页
-        String s = IOUtils.toString(inputStream, encoding);
+        String s = IOUtils.toString(inputStream, StandardCharsets.UTF_8);
         System.out.println(s);
         // 02 toInputStream
         byte[] bytes = new byte[5];
@@ -35,5 +37,7 @@ public class IOUtilsMain {
         System.out.println(new String(bytes));
         byte[] newBytes = new byte[10];
         // 04 copy
+        List<String> lines = IOUtils.readLines(new InputStreamReader(new FileInputStream(new File("")), StandardCharsets.UTF_8));
+
     }
 }

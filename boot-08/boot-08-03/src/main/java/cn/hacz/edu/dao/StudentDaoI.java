@@ -139,5 +139,4 @@ public interface StudentDaoI extends JpaRepository<StudentEntity, Integer> {
 
     /*===========================多表操作==============================*/
     // left join fetch & join fetch
-
 }
