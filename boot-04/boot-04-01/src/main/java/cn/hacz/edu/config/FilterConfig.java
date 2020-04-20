@@ -12,13 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * project - GitHub整理
- *
  * @author dong
  * @version 3.0
- * @date 日期:2018/7/11 时间:21:15
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Configuration
 public class FilterConfig implements WebMvcConfigurer {

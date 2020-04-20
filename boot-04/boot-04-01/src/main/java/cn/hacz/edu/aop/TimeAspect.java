@@ -6,13 +6,8 @@ import org.aspectj.lang.annotation.Aspect;
 import org.springframework.stereotype.Component;
 
 /**
- * project - GitHub整理
- *
  * @author dong
  * @version 1.0
- * @date 日期:2018/12/4 时间:21:17
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Component
 @Aspect

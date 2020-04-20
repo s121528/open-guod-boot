@@ -13,13 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 
 /**
- * project - GitHub整理
- *
  * @author dong
  * @version 3.0
- * @date 日期:2018/7/11 时间:21:23
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Component
 public class TimeInterceptor implements HandlerInterceptor {
