@@ -9,9 +9,6 @@ import java.sql.SQLException;
  *
  * @author guod
  * @version 1.0
- * @date 日期:2018/7/6 时间:18:21
- * @JDK 1.8
- * @Description 功能模块：
  */
 public class DataBaseConnection {
     private static final String USERNAME = "root";

@@ -6,13 +6,10 @@ import cn.hacz.edu.dao.impl.UserDaoImpl;
 import java.sql.Connection;
 
 /**
- * project - GitHub整理
+ * DAO工厂模式
  *
  * @author guod
  * @version 1.0
- * @date 日期:2018/7/6 时间:18:33
- * @JDK 1.8
- * @Description 功能模块：DAO工厂模式
  */
 public class DaoFactory {
     /**

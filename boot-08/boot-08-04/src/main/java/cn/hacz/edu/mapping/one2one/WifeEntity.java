@@ -13,9 +13,6 @@ import javax.persistence.*;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/11/21 时间:20:48
- * @JDK 1.8
- * @Description 功能模块：
  * a)	transient：内存中一个对象，没ID,缓存中也没有
  * b)	persistent：内存中有，缓存中有，数据库有（ID)
  * c)	detached：内存有，缓存没有，数据库有，ID
@@ -35,10 +32,12 @@ public class WifeEntity {
     @GeneratedValue
     @Column(name = "id", length = 36, nullable = false)
     private Integer id;
+
     /**
      * 属性描述：姓名
      */
     private String name;
+
     /**
      * 属性描述：丈夫
      * 规律01：凡是双向关联，必设mappedBy，指定这个一对一关联是被Husband类的wife属性(准确说是getWife方法)做的映射。

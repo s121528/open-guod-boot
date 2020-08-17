@@ -28,8 +28,7 @@ public class BaseRepositoryFactoryBean<R extends Repository<T, ID>, T, ID extend
      * @param <T>
      * @param <ID>
      */
-    private static class BaseRepositoryFactory<T, ID extends Serializable>
-            extends JpaRepositoryFactory {
+    private static class BaseRepositoryFactory<T, ID extends Serializable> extends JpaRepositoryFactory {
 
         private final EntityManager em;
 

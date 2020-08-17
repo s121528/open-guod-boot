@@ -27,9 +27,10 @@ import static org.apache.commons.lang3.StringUtils.*;
 /**
  * @author guod
  */
-public class BaseRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
+public class BaseRepositoryImpl<T, ID extends Serializable>
+        extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
 
-    private EntityManager entityManager;
+    private final EntityManager entityManager;
 
     private static final String NOT_RESULT = "没有查到结果集";
 

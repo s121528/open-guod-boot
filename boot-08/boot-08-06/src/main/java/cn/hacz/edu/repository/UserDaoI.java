@@ -9,9 +9,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author guod
  * @version 1.0
- * @date 日期:2018/9/11 时间:11:16
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Repository
 public interface UserDaoI extends BaseRepository<UserEntity, Integer> {
@@ -22,4 +19,5 @@ public interface UserDaoI extends BaseRepository<UserEntity, Integer> {
      * @return
      */
     UserEntity findById(Integer id);
+
 }

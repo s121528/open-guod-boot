@@ -11,9 +11,6 @@ import java.io.Serializable;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/11/22 时间:19:31
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Repository
 public interface GroupDaoI extends JpaRepository<GroupEntity, Serializable> {
