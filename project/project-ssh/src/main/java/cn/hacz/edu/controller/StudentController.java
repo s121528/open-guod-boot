@@ -32,12 +32,9 @@ import java.util.List;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2019/2/27 时间:16:32
- * @JDK 1.8
- * @Description 功能模块：
  */
 @RestController
-@Api(tags = "UserController-学生管理的增删改查")
+@Api(tags = "学生管理的增删改查-UserController")
 @Slf4j
 @RequestMapping(value = "/student")
 public class StudentController {

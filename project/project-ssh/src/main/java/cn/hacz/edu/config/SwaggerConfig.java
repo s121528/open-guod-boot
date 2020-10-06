@@ -31,7 +31,7 @@ public class SwaggerConfig {
                 .apiInfo(apiInfo())
                 .groupName("后台系统")
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("cn.hacz.edu.modules.system"))
+                .apis(RequestHandlerSelectors.basePackage("cn.hacz.edu.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }

@@ -17,9 +17,6 @@ import java.io.IOException;
  *
  * @author dong
  * @version 3.0
- * @date 日期:2018/7/9 时间:20:40
- * @JDK 1.8
- * @Description 功能模块：
  */
 @RestControllerAdvice
 public class ExceptionHandle {

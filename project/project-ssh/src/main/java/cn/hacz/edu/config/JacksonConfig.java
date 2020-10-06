@@ -20,13 +20,10 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 /**
- * project - GitHub整理
+ * project - 将原生jackson的返回值为null转化为""，方便前台输出
  *
  * @author dong
  * @version 1.0
- * @date 日期:2018/8/31 时间:22:34
- * @JDK 1.8
- * @Description 功能模块：将原生jackson的返回值为null转化为""，方便前台输出
  */
 @Configuration
 public class JacksonConfig {

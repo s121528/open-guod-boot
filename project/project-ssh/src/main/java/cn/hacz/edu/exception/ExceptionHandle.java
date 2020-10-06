@@ -17,9 +17,6 @@ import java.io.IOException;
  *
  * @author dong
  * @version 3.0
- * @date 日期:2018/7/9 时间:20:40
- * @JDK 1.8
- * @Description 功能模块：
  */
 @RestControllerAdvice
 public class ExceptionHandle {
@@ -58,7 +55,7 @@ public class ExceptionHandle {
         ApiResult j = new ApiResult();
         j.put("success", false);
         j.put("code", -406);
-        j.put("message", "http状态码406，不接受From数据校验异常。");
+        j.put("message", "http状态码406，不接受From数据校验异常！");
         if (!e.getBindingResult().hasErrors()) {
             j.put("message", "没有找到对应校验异常!");
             return j;
@@ -81,7 +78,7 @@ public class ExceptionHandle {
         ApiResult j = new ApiResult();
         j.put("success", false);
         j.put("code", -406);
-        j.put("data", "http状态码406，不接受Json数据校验异常。");
+        j.put("data", "http状态码406，不接受Json数据校验异常！");
         if (!e.getBindingResult().hasErrors()) {
             j.put("message", "没有找到校验异常!");
             return j;
@@ -97,7 +94,7 @@ public class ExceptionHandle {
         ApiResult j = new ApiResult();
         j.put("success", false);
         j.put("code", -407);
-        j.put("data", "http状态码407，数据库中该字段是唯一索引，不能重复。");
+        j.put("data", "http状态码407，数据库中该字段是唯一索引，不能重复！");
         j.put("message", e.getLocalizedMessage());
         return j;
     }
@@ -105,9 +102,8 @@ public class ExceptionHandle {
     /**
      * 功能描述：异常数据的打印
      *
-     * @param request
-     * @param e
-     * @throws IOException
+     * @param request 请求信息
+     * @param e       异常信息
      */
     private void printlnException(HttpServletRequest request, Throwable e) {
         // 相关记录
