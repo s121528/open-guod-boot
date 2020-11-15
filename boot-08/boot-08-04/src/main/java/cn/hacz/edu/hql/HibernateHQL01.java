@@ -18,9 +18,6 @@ import java.util.List;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/11/23 时间:20:35
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Repository
 @Transactional(rollbackFor = RuntimeException.class)
@@ -145,12 +142,12 @@ public class HibernateHQL01 {
      */
     public void testHQL_12() {
         List list = this.getSessionUnwrap().createQuery("select new cn.hacz.edu.mapping.admin.hql01.MsgInfo(" +
-                "m.id," +
-                " m.cont," +
-                " m.topic.title," +
-                " m.topic.category.name" +
-                ") " +
-                "from Msg m")
+                                                        "m.id," +
+                                                        " m.cont," +
+                                                        " m.topic.title," +
+                                                        " m.topic.category.name" +
+                                                        ") " +
+                                                        "from Msg m")
                 .list();
 
     }

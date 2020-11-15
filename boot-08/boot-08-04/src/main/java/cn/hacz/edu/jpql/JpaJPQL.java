@@ -11,9 +11,6 @@ import javax.persistence.PersistenceContext;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/11/24 时间:8:29
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Repository
 @Transactional(rollbackFor = RuntimeException.class)

@@ -14,6 +14,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   # 03ORM产品配置
   jpa:
+    generate-ddl: true
     show-sql: true  # 显示执行的SQL语句
     hibernate:
       ddl-auto: update     # 数据库创建方式（property: none, validate, update, create, and create-drop）
@@ -24,3 +25,4 @@ spring:
       hibernate:
         format_sql: true   # 格式化SQL语句
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect   # 设置数据库引擎
+    open-in-view: false
