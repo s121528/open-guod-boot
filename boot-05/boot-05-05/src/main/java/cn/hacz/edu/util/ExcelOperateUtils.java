@@ -109,7 +109,7 @@ public class ExcelOperateUtils {
      * @return 数据集合
      */
     private static List<Student> readExcel() {
-        List<Student> list = new ArrayList<Student>();
+        List<Student> list = new ArrayList<>();
         HSSFWorkbook workbook = null;
 
         try {
