@@ -12,9 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/11/26 时间:21:20
- * @JDK 1.8
- * @Description 功能模块：
  */
 @SpringBootTest
 @RunWith(SpringRunner.class)

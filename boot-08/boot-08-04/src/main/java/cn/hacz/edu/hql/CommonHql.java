@@ -4,6 +4,9 @@ import cn.hacz.edu.mapping.common.CommonEntity;
 import cn.hacz.edu.mapping.common.CommonReqVo;
 import cn.hacz.edu.mapping.common.CommonResVo;
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.SessionFactoryBuilder;
+import org.hibernate.boot.spi.SessionFactoryBuilderFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Repository;
@@ -23,9 +26,6 @@ import java.util.List;
  *
  * @author guodd
  * @version 1.0
- * @date 日期:2018/12/19 时间:8:38
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Repository
 @Transactional(rollbackFor = RuntimeException.class)

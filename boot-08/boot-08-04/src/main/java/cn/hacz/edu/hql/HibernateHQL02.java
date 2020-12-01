@@ -1,7 +1,9 @@
 package cn.hacz.edu.hql;
 
 import cn.hacz.edu.mapping.many2one.GroupEntity;
+import com.fasterxml.classmate.AnnotationConfiguration;
 import org.hibernate.Session;
+import org.hibernate.boot.SessionFactoryBuilder;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,9 +17,6 @@ import java.util.List;
  *
  * @author
  * @version 1.0
- * @date 日期:2018/11/26 时间:8:01
- * @JDK 1.8
- * @Description 功能模块：
  */
 @Service
 @Transactional(rollbackFor = RuntimeException.class)
